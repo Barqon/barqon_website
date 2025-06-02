@@ -1,0 +1,257 @@
+'use client';
+
+import { AnimatePresence } from 'framer-motion';
+import { MotionDiv } from '@/components/Motion';
+import React from 'react';
+import Script from 'next/script';
+
+// Service data
+const services = [
+  {
+    id: 'web-dev',
+    title: 'Web Development',
+    description: 'Responsive, fast, and optimized websites built with modern frameworks.',
+    icon: '💻',
+    features: [
+      'Mobile-first responsive design',
+      'Modern tech stack (Next.js, React)',
+      'Performance optimization',
+      'SEO best practices',
+      'Custom animations & interactions'
+    ]
+  },
+  {
+    id: 'workspace',
+    title: 'Workspace Management',
+    description: 'Professional setup and management of Google Workspace, Microsoft 365, domains, emails, and admin tools.',
+    icon: '🏢',
+    features: [
+      'Google Workspace setup',
+      'Microsoft 365 integration',
+      'Domain management',
+      'Email system configuration',
+      'Admin tools & permissions'
+    ]
+  },
+  {
+    id: 'branding',
+    title: 'Brand Identity & Strategy',
+    description: 'We craft unique, consistent brand stories that elevate perception and value.',
+    icon: '🎯',
+    features: [
+      'Brand strategy & positioning',
+      'Logo & visual identity design',
+      'Brand guidelines & assets',
+      'Voice & messaging framework',
+      'Brand collateral design'
+    ]
+  },
+  {
+    id: 'uiux',
+    title: 'UI/UX Design Systems',
+    description: 'User-first interfaces with stunning design systems for web and mobile.',
+    icon: '🎨',
+    features: [
+      'User research & personas',
+      'Wireframing & prototyping',
+      'Design system creation',
+      'Interaction design',
+      'Usability testing'
+    ]
+  },
+  {
+    id: 'motion',
+    title: 'Creative Motion & Visual Design',
+    description: 'Eye-catching motion graphics and visuals to bring your ideas to life.',
+    icon: '🌀',
+    features: [
+      'Motion graphics & animations',
+      'Video production & editing',
+      'Social media content',
+      'Explainer videos',
+      'Brand motion guidelines'
+    ]
+  },
+  {
+    id: 'campaign',
+    title: 'Advertising & Campaign Strategy',
+    description: 'Impactful ad creatives and smart campaign blueprints to drive engagement.',
+    icon: '📣',
+    features: [
+      'Campaign strategy & planning',
+      'Ad creative development',
+      'Social media campaigns',
+      'Performance tracking',
+      'A/B testing & optimization'
+    ]
+  },
+  {
+    id: 'startup',
+    title: 'Startup Launch & Support',
+    description: 'From pitch to product — we help startups kick off and scale rapidly.',
+    icon: '🚀',
+    features: [
+      'Pitch deck development',
+      'MVP planning & execution',
+      'Growth strategy',
+      'Investor relations',
+      'Technical infrastructure'
+    ]
+  },
+  {
+    id: 'nextjs',
+    title: 'Next.js & TailwindCMS Solutions',
+    description: 'Powerful full-stack solutions using modern tech that\'s built to perform.',
+    icon: '⚙️',
+    features: [
+      'Next.js development',
+      'TailwindCSS integration',
+      'Headless CMS setup',
+      'API development',
+      'Performance optimization'
+    ]
+  },
+  {
+    id: 'ondemand',
+    title: 'On-Demand Custom Digital Services',
+    description: 'Have something specific in mind? We tailor digital services on-demand.',
+    icon: '📦',
+    features: [
+      'Custom development',
+      'Technical consulting',
+      'System integration',
+      'Digital transformation',
+      'Project management'
+    ]
+  }
+];
+
+export default function Services() {
+  return (
+    <>
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Barqon",
+            "url": "https://barqon.com",
+            "logo": "https://barqon.com/logo.png",
+            "description": "Premium web development and design studio in New Zealand",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "NZ"
+            },
+            "sameAs": [
+              "https://linkedin.com/company/barqon",
+              "https://twitter.com/barqon",
+              "https://instagram.com/barqon"
+            ]
+          })
+        }}
+      />
+      <Script
+        id="service-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": services.map((service, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Service",
+                "name": service.title,
+                "description": service.description,
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Barqon"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "New Zealand"
+                },
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": service.title,
+                  "itemListElement": service.features.map((feature, i) => ({
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": feature
+                    }
+                  }))
+                }
+              }
+            }))
+          })
+        }}
+      />
+      <section className="min-h-screen bg-[#1B1B1B] px-6 pt-24 pb-12 text-[#D6C4A8] font-sans">
+        <MotionDiv
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-4xl font-bold tracking-wide mb-3">What We <span className="bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent">Offer</span></h1>
+          <p className="max-w-3xl mx-auto text-base text-[#EED9B6]">
+            Barqon isn't just a studio — it's where bold design meets digital innovation.
+          </p>
+        </MotionDiv>
+
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <MotionDiv
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.1 }}
+                className="group bg-[#1B1B1B]/50 rounded-xl p-6 border border-[#046C4E] hover:border-[#00FFBF] transition-all duration-75 hover:shadow-lg hover:shadow-[#00FFBF]/10 transform hover:scale-105 hover:bg-[#1B1B1B]/70 relative overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00FFBF]/0 via-[#00FFBF]/5 to-[#00FFBF]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-75"></div>
+                <div className="text-3xl mb-3">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-[#EED9B6] mb-2 group-hover:text-[#00FFBF] transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-[#C1C1C1] mb-4">
+                  {service.description}
+                </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-xs text-[#AAAAAA] group-hover:text-[#C1C1C1] transition-colors duration-300">
+                      <span className="text-[#00FFBF] mr-2">→</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </MotionDiv>
+            ))}
+          </div>
+        </div>
+
+          <MotionDiv
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <p className="max-w-3xl mx-auto text-base text-[#EED9B6] mb-6">
+            From concept to code — we turn your vision into seamless, stunning digital products. Ready to make your mark?
+          </p>
+          <a 
+            href="/contact-us" 
+            className="inline-block px-6 py-3 text-sm bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] text-black font-semibold rounded-lg hover:from-[#00FFBF] hover:to-[#EED9B6] transition-all duration-300 transform hover:scale-105"
+          >
+            Get Started
+          </a>
+          </MotionDiv>
+    </section>
+    </>
+  );
+}
