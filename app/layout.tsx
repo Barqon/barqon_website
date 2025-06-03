@@ -44,6 +44,20 @@ export const metadata: Metadata = {
   other: {
     'geo.region': 'NZ',
     'geo.placename': 'New Zealand',
+    'application-name': 'Barqon',
+    'apple-mobile-web-app-title': 'Barqon',
+    'msapplication-TileColor': '#1B1B1B',
+    'msapplication-TileImage': '/logo.png',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico'],
   },
 };
 
