@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Get in touch with Barqon for web development, design, and digital solutions. Serving New Zealand and global clients.',
     type: 'website',
     locale: 'en_NZ',
-    url: 'https://barqon.com/contact-us',
+    url: 'https://barqon.co.nz/contact-us',
     siteName: 'Barqon',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ['/og-contact.jpg']
   },
   alternates: {
-    canonical: 'https://barqon.com/contact-us'
+    canonical: 'https://barqon.co.nz/contact-us'
   },
   robots: {
     index: true,

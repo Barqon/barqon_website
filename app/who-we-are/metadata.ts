@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Who We Are | Barqon - Premium Web Development Studio in New Zealand',
     description: 'Meet the team behind Barqon, New Zealand\'s leading web development studio. Discover our mission to transform digital landscapes with innovative solutions.',
     type: 'website',
-    url: 'https://barqon.com/who-we-are',
+    url: 'https://barqon.co.nz/who-we-are',
     images: [
       {
         url: '/Team Section Banner_1.jpg',

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     images: ['/og-services.jpg']
   },
   alternates: {
-    canonical: 'https://barqon.com/services'
+    canonical: 'https://barqon.co.nz/services'
   },
   robots: {
     index: true,

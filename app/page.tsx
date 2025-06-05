@@ -12,42 +12,72 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "LocalBusiness",
             "name": "Barqon",
-            "url": "https://barqon.com",
-            "logo": "https://barqon.com/Desktop Logo.png",
-            "description": "New Zealand's leading affordable web development studio. Expert in modern web design, development, and digital experiences. Available 24/7 across New Zealand.",
+            "image": "https://barqon.co.nz/Desktop Logo.png",
+            "logo": "https://barqon.co.nz/Desktop Logo.png",
+            "url": "https://barqon.co.nz",
+            "description": "New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "NZ"
             },
-            "offers": {
-              "@type": "Offer",
-              "name": "Affordable Web Development Services",
-              "description": "Premium web development, design, and digital experiences at competitive prices",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "priceCurrency": "NZD",
-                "valueAddedTaxIncluded": true
-              }
-            },
-            "serviceType": [
-              "Web Development",
-              "Web Design",
-              "Digital Experience Design",
-              "Custom Website Development",
-              "Affordable Web Solutions"
-            ],
             "areaServed": {
               "@type": "Country",
               "name": "New Zealand"
             },
             "priceRange": "$$",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
               "bestRating": "5",
               "ratingCount": "50"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Barqon Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Development",
+                    "description": "Custom full-stack website development using modern tools."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Design",
+                    "description": "Clean, responsive, Gen Z-centric UI/UX designs tailored to your brand."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Digital Experience Design",
+                    "description": "Crafting immersive digital experiences powered by Next.js and Tailwind CSS."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Affordable Web Solutions",
+                    "description": "Budget-friendly yet professional websites with enterprise features."
+                  }
+                }
+              ]
             }
           })
         }}
@@ -61,7 +91,7 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Barqon",
-            "image": "https://barqon.com/Desktop Logo.png",
+            "image": "https://barqon.co.nz/Desktop Logo.png",
             "description": "New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.",
             "address": {
               "@type": "PostalAddress",
@@ -71,7 +101,7 @@ export default function HomePage() {
               "@type": "Country",
               "name": "New Zealand"
             },
-            "url": "https://barqon.com",
+            "url": "https://barqon.co.nz",
             "priceRange": "$$",
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",

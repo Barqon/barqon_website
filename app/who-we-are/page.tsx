@@ -37,43 +37,83 @@ export default function WhoWeAre() {
     }
   ];
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Who We Are | Barqon",
-    "description": "Meet the team behind Barqon, New Zealand's leading web development studio. Discover our mission to transform digital landscapes with innovative solutions.",
-    "url": "https://barqon.co.nz/who-we-are",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Barqon",
-      "description": "A next-gen digital studio proudly born in New Zealand, redefining premium online presence for every Kiwi with a vision.",
-      "url": "https://barqon.co.nz",
-      "logo": "https://barqon.co.nz/logo.png",
-      "sameAs": [
-        "https://barqon.co.nz",
-        "mailto:info@barqon.co.nz"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "NZ"
-      },
-      "employee": teamMembers.map(member => ({
-        "@type": "Person",
-        "name": member.name,
-        "jobTitle": member.title,
-        "description": member.bio,
-        "email": member.email,
-        "telephone": member.phone
-      }))
-    }
-  };
-
   return (
     <>
       <Script
         id="structured-data"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Barqon",
+            "image": "https://barqon.co.nz/Desktop Logo.png",
+            "logo": "https://barqon.co.nz/Desktop Logo.png",
+            "url": "https://barqon.co.nz",
+            "description": "New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "NZ"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "New Zealand"
+            },
+            "priceRange": "$$",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "ratingCount": "50"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Barqon Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Development",
+                    "description": "Custom full-stack website development using modern tools."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Design",
+                    "description": "Clean, responsive, Gen Z-centric UI/UX designs tailored to your brand."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Digital Experience Design",
+                    "description": "Crafting immersive digital experiences powered by Next.js and Tailwind CSS."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Affordable Web Solutions",
+                    "description": "Budget-friendly yet professional websites with enterprise features."
+                  }
+                }
+              ]
+            }
+          })
+        }}
       />
       <section className="min-h-screen bg-[#1B1B1B] px-6 py-16 text-[#D6C4A8] font-sans overflow-hidden">
         <MotionDiv

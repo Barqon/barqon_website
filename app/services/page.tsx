@@ -135,58 +135,73 @@ export default function Services() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "LocalBusiness",
             "name": "Barqon",
-            "url": "https://barqon.com",
-            "logo": "https://barqon.com/logo.png",
-            "description": "Premium web development and design studio in New Zealand",
+            "image": "https://barqon.co.nz/Desktop Logo.png",
+            "logo": "https://barqon.co.nz/Desktop Logo.png",
+            "url": "https://barqon.co.nz",
+            "description": "New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "NZ"
             },
-            "sameAs": [
-              "https://linkedin.com/company/barqon",
-              "https://twitter.com/barqon",
-              "https://instagram.com/barqon"
-            ]
-          })
-        }}
-      />
-      <Script
-        id="service-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": services.map((service, index) => ({
-              "@type": "ListItem",
-              "position": index + 1,
-              "item": {
-                "@type": "Service",
-                "name": service.title,
-                "description": service.description,
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Barqon"
+            "areaServed": {
+              "@type": "Country",
+              "name": "New Zealand"
+            },
+            "priceRange": "$$",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "ratingCount": "50"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Barqon Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Development",
+                    "description": "Custom full-stack website development using modern tools."
+                  }
                 },
-                "areaServed": {
-                  "@type": "Country",
-                  "name": "New Zealand"
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Design",
+                    "description": "Clean, responsive, Gen Z-centric UI/UX designs tailored to your brand."
+                  }
                 },
-                "hasOfferCatalog": {
-                  "@type": "OfferCatalog",
-                  "name": service.title,
-                  "itemListElement": service.features.map((feature, i) => ({
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": feature
-                    }
-                  }))
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Digital Experience Design",
+                    "description": "Crafting immersive digital experiences powered by Next.js and Tailwind CSS."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Affordable Web Solutions",
+                    "description": "Budget-friendly yet professional websites with enterprise features."
+                  }
                 }
-              }
-            }))
+              ]
+            }
           })
         }}
       />
