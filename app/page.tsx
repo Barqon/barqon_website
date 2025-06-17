@@ -43,7 +43,7 @@ const features = [
     id: 'design',
     icon: '🎨',
     title: 'Tailored Designs',
-    description: "Custom-built UIs that reflect your brand&apos;s identity with stunning aesthetics.",
+    description: "Custom-built UIs that reflect your brand's identity with stunning aesthetics.",
     features: [
       'Brand-aligned design',
       'Responsive layouts',
@@ -109,7 +109,7 @@ export default function HomePage() {
             "image": "https://barqon.co.nz/Desktop Logo.png",
             "logo": "https://barqon.co.nz/Desktop Logo.png",
             "url": "https://barqon.co.nz",
-            "description": "New Zealand&apos;s leading affordable web development studio. Available 24/7 across New Zealand.",
+            "description": "New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "NZ"
@@ -184,7 +184,7 @@ export default function HomePage() {
             "@type": "LocalBusiness",
             "name": "Barqon",
             "image": "https://barqon.co.nz/Desktop Logo.png",
-            "description": "New Zealand&apos;s leading affordable web development studio. Available 24/7 across New Zealand.",
+            "description": "New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "NZ"
@@ -245,7 +245,7 @@ export default function HomePage() {
                 "@type": "Service",
                 "position": 3,
                 "name": "Tailored Designs",
-                "description": "Custom-built UIs that reflect your brand&apos;s identity with stunning aesthetics.",
+                "description": "Custom-built UIs that reflect your brand's identity with stunning aesthetics.",
                 "provider": {
                   "@type": "Organization",
                   "name": "Barqon"
@@ -273,7 +273,7 @@ export default function HomePage() {
               Welcome to <span className="bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent">Barqon</span>
             </h1>
             <p className={`max-w-3xl mx-auto text-base ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-600'}`}>
-              New Zealand&apos;s leading affordable web development studio. Available 24/7 across New Zealand.
+              New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.
             </p>
           </MotionDiv>
 

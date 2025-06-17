@@ -216,7 +216,7 @@ export default function Services() {
         >
           <h1 className="text-4xl font-bold tracking-wide mb-3">What We <span className="bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent">Offer</span></h1>
           <p className={`max-w-3xl mx-auto text-base ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-600'}`}>
-            Barqon isn&apos;t just a studio — it&apos;s where bold design meets digital innovation.
+            Barqon isn't just a studio — it's where bold design meets digital innovation.
           </p>
         </MotionDiv>
 

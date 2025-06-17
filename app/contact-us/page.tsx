@@ -19,19 +19,23 @@ export default function ContactUs() {
       >
         <div className={`absolute inset-0 pointer-events-none rounded-3xl ${isDarkTheme ? 'bg-gradient-to-br from-[#00FFBF]/10 via-[#EED9B6]/10 to-[#046C4E]/10' : 'bg-gradient-to-br from-emerald-50/10 via-amber-50/10 to-cyan-50/10'} animate-pulse opacity-70`} />
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent drop-shadow-lg tracking-tight">Contact Us</h1>
-        <p className={`text-lg md:text-xl ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-700'} mb-10 font-medium`}>Let&apos;s build something great together. Reach out to us for collaborations, partnerships, or inquiries.</p>
+        <p className={`text-lg md:text-xl ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-700'} mb-10 font-medium`}>Let's build something great together. Reach out to us for collaborations, partnerships, or inquiries.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-y-0 gap-x-8 mb-12 text-center">
           <div className={`relative group flex-1 w-full rounded-2xl p-8 ${isDarkTheme ? 'bg-white/10' : 'bg-white/90 shadow-lg hover:shadow-xl'} backdrop-blur-md overflow-hidden flex flex-col items-center border-2 border-transparent before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-[#EED9B6] before:via-[#00FFBF] before:to-[#046C4E] before:opacity-0 group-hover:before:opacity-60 before:transition-opacity before:duration-500 min-w-0`}>
             <div className="relative z-10 w-full flex flex-col items-center text-center">
               <h3 className="text-base font-bold mb-1 bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent tracking-wide uppercase">Email</h3>
-              <p className="text-[#00FFBF] font-mono text-lg md:text-xl font-semibold select-all whitespace-nowrap text-center">info@barqon.co.nz</p>
+              <a href="mailto:info@barqon.co.nz" className="text-[#00FFBF] font-mono text-lg md:text-xl font-semibold select-all whitespace-nowrap text-center hover:underline">
+                info@barqon.co.nz
+              </a>
               <p className={`text-xs ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-600'} mt-2 text-center`}>We reply as soon as possible</p>
             </div>
           </div>
           <div className={`relative group flex-1 w-full rounded-2xl p-8 ${isDarkTheme ? 'bg-white/10' : 'bg-white/90 shadow-lg hover:shadow-xl'} backdrop-blur-md overflow-hidden flex flex-col items-center border-2 border-transparent before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-[#EED9B6] before:via-[#00FFBF] before:to-[#046C4E] before:opacity-0 group-hover:before:opacity-60 before:transition-opacity before:duration-500 min-w-0`}>
             <div className="relative z-10 w-full flex flex-col items-center text-center">
               <h3 className="text-base font-bold mb-1 bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent tracking-wide uppercase">Phone</h3>
-              <p className="text-[#00FFBF] font-mono text-lg md:text-xl font-semibold select-all whitespace-nowrap text-center">+64 22 387 5455</p>
+              <a href="tel:+64223875455" className="text-[#00FFBF] font-mono text-lg md:text-xl font-semibold select-all whitespace-nowrap text-center hover:underline">
+                +64 22 387 5455
+              </a>
               <p className={`text-xs ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-600'} mt-2 text-center`}>Available 6 AM – 10 PM</p>
             </div>
           </div>
@@ -51,7 +55,7 @@ export default function ContactUs() {
             className={`p-6 ${isDarkTheme ? 'bg-gradient-to-br from-[#232323]/90 via-[#046C4E]/10 to-[#00FFBF]/10 text-[#EED9B6]' : 'bg-gradient-to-br from-white/90 via-emerald-50/10 to-cyan-50/10 text-gray-700 shadow-lg'} rounded-2xl border ${isDarkTheme ? 'border-[#046C4E]' : 'border-emerald-200'}`}
           >
             <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent">Thank you!</h2>
-            <p>We&apos;ve received your message and will get back to you within 24 hours.</p>
+            <p>We've received your message and will get back to you within 24 hours.</p>
           </MotionDiv>
         ) : (
           <form

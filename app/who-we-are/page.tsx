@@ -19,19 +19,19 @@ export default function WhoWeAre() {
     {
       name: "Fathima Babu",
       title: "Founder & Chief Executive Officer",
-      bio: "The visionary at the helm. Fathima leads Barqon&apos;s operations, strategy, and client success with professionalism and heart. As a registered company director, she ensures every move Barqon makes is built to last.",
+      bio: "The visionary at the helm. Fathima leads Barqon's operations, strategy, and client success with professionalism and heart. As a registered company director, she ensures every move Barqon makes is built to last.",
       email: "fathima@barqon.co.nz",
       phone: "‭+64 22 387 5455‬"
     },
     {
       name: "Babu Abdul Khader",
       title: "Strategic Advisor & Family Investor (Non-operational)",
-      bio: "Babu plays a crucial behind-the-scenes role in Barqon&apos;s journey, offering financial insight and legacy-focused support. While not involved in day-to-day operations, he is a key part of Barqon&apos;s foundation."
+      bio: "Babu plays a crucial behind-the-scenes role in Barqon's journey, offering financial insight and legacy-focused support. While not involved in day-to-day operations, he is a key part of Barqon's foundation."
     },
     {
       name: "Mohammad Madhih Babu",
       title: "Innovation & Strategy Contributor (Future COO)",
-      bio: "Madhih brings Barqon&apos;s tech vision to life from the inside. Focused on future leadership, he&apos;s shaping Barqon&apos;s roadmap, branding, and systems while preparing to take full operational control as soon as legally permitted."
+      bio: "Madhih brings Barqon's tech vision to life from the inside. Focused on future leadership, he's shaping Barqon's roadmap, branding, and systems while preparing to take full operational control as soon as legally permitted."
     }
   ];
 
@@ -48,7 +48,7 @@ export default function WhoWeAre() {
             "image": "https://barqon.co.nz/Desktop Logo.png",
             "logo": "https://barqon.co.nz/Desktop Logo.png",
             "url": "https://barqon.co.nz",
-            "description": "New Zealand&apos;s leading affordable web development studio. Available 24/7 across New Zealand.",
+            "description": "New Zealand's leading affordable web development studio. Available 24/7 across New Zealand.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "NZ"
@@ -136,7 +136,7 @@ export default function WhoWeAre() {
           >
             <Image
               src="/Team Section Banner_1.jpg"
-              alt="Barqon Team - New Zealand&apos;s Leading Web Development Studio"
+              alt="Barqon Team - New Zealand's Leading Web Development Studio"
               width={1200}
               height={600}
               className={`rounded-xl w-full object-cover border ${isDarkTheme ? 'border-[#046C4E]' : 'border-emerald-200'} shadow-lg hover:shadow-[0_0_20px_#00FFBF] transition-all duration-300 group-hover:scale-110`}
@@ -156,7 +156,7 @@ export default function WhoWeAre() {
           <div className="relative z-10">
             <h2 className={`text-2xl md:text-3xl font-semibold mb-4 ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-800'}`}>Our Mission</h2>
             <p className={`text-base md:text-xl ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-700'}`}>
-              Our mission? Transform New Zealand&apos;s digital landscape. Whether you&apos;re a startup or an enterprise, we offer elite design and development — from affordable custom sites to luxury web builds — tailored to your goals.
+              Our mission? Transform New Zealand's digital landscape. Whether you're a startup or an enterprise, we offer elite design and development — from affordable custom sites to luxury web builds — tailored to your goals.
             </p>
             <p className={`mt-4 text-sm md:text-lg ${isDarkTheme ? 'text-[#C1C1C1]' : 'text-gray-600'}`}>
               We blend creative power, tech innovation, and a deep understanding of Kiwi culture to deliver unforgettable online experiences.
@@ -175,7 +175,7 @@ export default function WhoWeAre() {
             <div className={`absolute inset-0 pointer-events-none z-0 ${isDarkTheme ? 'bg-gradient-to-r from-[#00FFBF]/0 via-[#00FFBF]/5 to-[#00FFBF]/0' : 'bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-mint/10 via-mint/20 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-75`}></div>
             <Image
               src="/Premium office with modern furniture, dark theme, emerald lights, digital hub vibe, futuristic environment_1.jpg"
-              alt="Barqon&apos;s Modern Office Space - Innovation Hub"
+              alt="Barqon's Modern Office Space - Innovation Hub"
               fill
               className="rounded-xl transition-transform duration-300 group-hover:scale-110 object-cover relative z-10"
               priority
@@ -191,7 +191,7 @@ export default function WhoWeAre() {
             <div className={`absolute inset-0 pointer-events-none z-0 ${isDarkTheme ? 'bg-gradient-to-r from-[#00FFBF]/0 via-[#00FFBF]/5 to-[#00FFBF]/0' : 'bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-mint/10 via-mint/20 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-75`}></div>
             <Image
               src="/Technology Flow Graphic_1.jpg"
-              alt="Barqon&apos;s Technology Infrastructure"
+              alt="Barqon's Technology Infrastructure"
               fill
               className="rounded-xl transition-transform duration-300 group-hover:scale-110 object-cover relative z-10"
               priority
@@ -241,8 +241,12 @@ export default function WhoWeAre() {
                   <p className={`mt-4 text-sm ${isDarkTheme ? 'text-[#D6C4A8]' : 'text-gray-700'}`}>{person.bio}</p>
                   {person.email && person.phone && (
                     <>
-                      <p className="mt-2 text-sm text-[#00FFBF]">📧 {person.email}</p>
-                      <p className={`text-sm ${isDarkTheme ? 'text-[#C1C1C1]' : 'text-gray-600'}`}>📞 {person.phone}</p>
+                      <p className="mt-2 text-sm text-[#00FFBF]">
+                        📧 <a href={`mailto:${person.email}`} className="hover:underline">{person.email}</a>
+                      </p>
+                      <p className={`text-sm ${isDarkTheme ? 'text-[#C1C1C1]' : 'text-gray-600'}`}>
+                        📞 <a href={`tel:${person.phone.replace(/\s+/g, '')}`} className="hover:underline">{person.phone}</a>
+                      </p>
                     </>
                   )}
                 </MotionDiv>
