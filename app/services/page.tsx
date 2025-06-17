@@ -1,9 +1,9 @@
 'use client';
 
-import { AnimatePresence } from 'framer-motion';
 import { MotionDiv } from '@/components/Motion';
 import React from 'react';
 import Script from 'next/script';
+import { useTheme } from '../context/ThemeContext';
 
 // Service data
 const services = [
@@ -127,6 +127,8 @@ const services = [
 ];
 
 export default function Services() {
+  const { isDarkTheme } = useTheme();
+
   return (
     <>
       <Script
@@ -205,7 +207,7 @@ export default function Services() {
           })
         }}
       />
-      <section className="min-h-screen bg-[#1B1B1B] px-6 pt-24 pb-12 text-[#D6C4A8] font-sans">
+      <section className={`min-h-screen ${isDarkTheme ? 'bg-[#1B1B1B] text-[#D6C4A8]' : 'bg-gradient-to-b from-white via-gray-50 to-emerald-50/30 text-gray-800'} px-6 pt-24 pb-12 font-sans`}>
         <MotionDiv
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -213,46 +215,48 @@ export default function Services() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold tracking-wide mb-3">What We <span className="bg-gradient-to-r from-[#EED9B6] to-[#00FFBF] bg-clip-text text-transparent">Offer</span></h1>
-          <p className="max-w-3xl mx-auto text-base text-[#EED9B6]">
-            Barqon isn't just a studio — it's where bold design meets digital innovation.
+          <p className={`max-w-3xl mx-auto text-base ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-600'}`}>
+            Barqon isn&apos;t just a studio — it&apos;s where bold design meets digital innovation.
           </p>
         </MotionDiv>
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <MotionDiv
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.1 }}
-                className="group bg-[#1B1B1B]/50 rounded-xl p-6 border border-[#046C4E] hover:border-[#00FFBF] transition-all duration-75 hover:shadow-lg hover:shadow-[#00FFBF]/10 transform hover:scale-105 hover:bg-[#1B1B1B]/70 relative overflow-hidden"
+                className={`group ${isDarkTheme ? 'bg-[#1B1B1B]/50 hover:bg-[#1B1B1B]/70' : 'bg-white/90 hover:bg-white shadow-lg hover:shadow-xl'} rounded-xl p-6 border ${isDarkTheme ? 'border-[#046C4E] hover:border-[#00FFBF]' : 'border-emerald-100 hover:border-emerald-300'} transition-all duration-75 hover:shadow-lg hover:shadow-[#00FFBF]/10 transform hover:scale-105 relative overflow-hidden backdrop-blur-sm`}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#00FFBF]/0 via-[#00FFBF]/5 to-[#00FFBF]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-75"></div>
-                <div className="text-3xl mb-3">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-[#EED9B6] mb-2 group-hover:text-[#00FFBF] transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-[#C1C1C1] mb-4">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-xs text-[#AAAAAA] group-hover:text-[#C1C1C1] transition-colors duration-300">
-                      <span className="text-[#00FFBF] mr-2">→</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className={`absolute inset-0 pointer-events-none z-0 ${isDarkTheme ? 'bg-gradient-to-r from-[#00FFBF]/0 via-[#00FFBF]/5 to-[#00FFBF]/0' : 'bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-mint/10 via-mint/20 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-75`}></div>
+                <div className="relative z-10">
+                  <div className="text-3xl mb-3">{service.icon}</div>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-[#EED9B6]' : 'text-gray-800'} mb-2 group-hover:text-[#00FFBF] transition-colors duration-300`}>
+                    {service.title}
+                  </h3>
+                  <p className={`text-sm ${isDarkTheme ? 'text-[#C1C1C1]' : 'text-gray-600'} mb-4`}>
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className={`flex items-center text-xs ${isDarkTheme ? 'text-[#AAAAAA] group-hover:text-[#C1C1C1]' : 'text-gray-500 group-hover:text-gray-700'} transition-colors duration-300`}>
+                        <span className="text-[#00FFBF] mr-2">→</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </MotionDiv>
             ))}
           </div>
         </div>
 
-          <MotionDiv
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+        <MotionDiv
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mt-12"
         >
@@ -265,8 +269,8 @@ export default function Services() {
           >
             Get Started
           </a>
-          </MotionDiv>
-    </section>
+        </MotionDiv>
+      </section>
     </>
   );
 }

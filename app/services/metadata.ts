@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     title: 'Barqon Services - Premium Web Development & Design',
     description: 'Transform your digital presence with Barqon\'s expert services. From web development to brand strategy, we deliver premium solutions for your business.',
     type: 'website',
+    url: 'https://barqon.co.nz/services',
     locale: 'en_NZ',
     siteName: 'Barqon',
     images: [
@@ -53,4 +54,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  other: {
+    'breadcrumbs': JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://barqon.co.nz/"},
+        {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://barqon.co.nz/services"}
+      ]
+    })
+  }
 }; 

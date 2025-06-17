@@ -51,4 +51,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  other: {
+    'breadcrumbs': JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://barqon.co.nz/"},
+        {"@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://barqon.co.nz/contact-us"}
+      ]
+    })
+  }
 }; 
